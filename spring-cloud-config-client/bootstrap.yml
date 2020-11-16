@@ -1,0 +1,50 @@
+server:
+  port: 3302
+spring:
+  application:
+    name: spring-cloud-config-client
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:3301
+      username: root
+      password: "s3cr3t"
+      profile: dev
+      #failFast: true
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,refresh
+        exclude: env
+---
+########################################################################################################################
+#Properties override when -Dspring.profiles.active=prod
+########################################################################################################################
+spring:
+  profiles: prod
+  application:
+    name: user-config
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:3301
+      label: master
+      profile: prod
+---
+########################################################################################################################
+#Properties override when -Dspring.profiles.active=dev
+########################################################################################################################
+spring:
+  profiles: dev
+  application:
+    name: user-config
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:3301
+      label: master
+      profile: dev

@@ -1,0 +1,18 @@
+server:
+  port: 3301
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jeffreychuuu/spring-cloud-config-repo.git
+#          username: github
+#          password: github
+          default-label: master
+          search-paths: config
+  security:
+    user:
+      name: root
+      password: s3cr3t

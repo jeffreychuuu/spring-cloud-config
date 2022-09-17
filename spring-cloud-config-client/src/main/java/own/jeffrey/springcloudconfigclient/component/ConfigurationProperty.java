@@ -18,7 +18,7 @@ public class ConfigurationProperty {
     public static class User{
         String name;
         String role;
-        String team;
+        String tribe;
         ArrayList<String> group = new ArrayList<>();
         Map<String, ArrayList> departmentRoles = new HashMap<>();
 
@@ -38,12 +38,12 @@ public class ConfigurationProperty {
             this.role = role;
         }
 
-        public String getTeam() {
-            return team;
+        public String getTribe() {
+            return tribe;
         }
 
-        public void setTeam(String team) {
-            this.team = team;
+        public void setTribe(String tribe) {
+            this.tribe = tribe;
         }
 
         public ArrayList<String> getGroup() {
